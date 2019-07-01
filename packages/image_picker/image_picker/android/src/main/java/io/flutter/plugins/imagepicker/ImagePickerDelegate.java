@@ -327,14 +327,14 @@ public class ImagePickerDelegate
   }
 
   private void launchPickImageFromGalleryIntent() {
-    Intent pickImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
+    Intent pickImageIntent = new Intent(Intent.ACTION_PICK);
     pickImageIntent.setType("image/*");
 
     activity.startActivityForResult(pickImageIntent, REQUEST_CODE_CHOOSE_IMAGE_FROM_GALLERY);
   }
 
   private void launchMultiPickImageFromGalleryIntent() {
-    Intent pickImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
+    Intent pickImageIntent = new Intent(Intent.ACTION_PICK);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
       pickImageIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
     }
